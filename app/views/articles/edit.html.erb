@@ -1,7 +1,7 @@
 <h1>Edit existing article</h1>
 
 <% if @article.errors.any? %>
-<h3>The following error/s prevented the article from getting updated:</h3>
+<h3>The following error/s occurred:</h3>
 <ul>
   <% @article.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
@@ -23,5 +23,5 @@
 </p>
 <% end %>
 
-<p><%= link_to "Back to article", article_path(@article) %></p>
 <p><%= link_to "Back to list", articles_path %></p>
+<p><%= link_to "Back to article", article_path(@article) %></p>
