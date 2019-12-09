@@ -1,0 +1,10 @@
+<% if obj.errors.any? %>
+<div class="alert alert-danger col-sm-12" role="alert">
+<h6>The following <%= pluralize(obj.errors.count, "error") %> occurred:</h6>
+<ul>
+  <% obj.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+</div>
+<% end %>
