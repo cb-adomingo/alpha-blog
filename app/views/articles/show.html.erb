@@ -1,5 +1,8 @@
 <div class="card card-body bg-light">
   <h4 class="center"><strong><%= @article.title %></strong></h4>
+  <% if @article.user %>
+  <small class="center">by <strong><%= link_to @article.user.username, user_path(@article.user) %></strong></small>
+  <% end %>
   <hr>
   <%= simple_format(@article.description) %>
   <hr>
