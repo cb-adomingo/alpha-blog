@@ -1,4 +1,9 @@
 <h1 class="display-6 center mt-4"><%= @category.name %></h1>
+<% if logged_in and current_user.admin? %>
+<div class="center">
+    <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-primary" %>
+</div>
+<% end %>
 <%= will_paginate @category_articles, list_classes: %w(pagination justify-content-center mt-4) %>
 <%= render 'articles/article', obj: @category_articles %>
 <%= will_paginate @category_articles, list_classes: %w(pagination justify-content-center mt-4) %>
