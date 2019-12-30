@@ -5,6 +5,9 @@
   <% end %>
   <hr>
   <%= simple_format(@article.description) %>
+  <% if @article.categories.any? %>
+    <p><%= render @article.categories %></p>
+  <% end %>
   <hr>
   <div class="articles-action center">
     <% if logged_in && (current_user == @article.user || current_user.admin?) %>
